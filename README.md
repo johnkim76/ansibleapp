@@ -1,6 +1,6 @@
-# AnsibleApp
+# Ansible Playbook Bundle
 
-AnsibleApp is a lightweight application definition (meta-containers). AnsibleApp
+Ansible Playbook Bundle (APB) is a lightweight application definition (meta-containers). APB
 has the following features:
 
 * Metadata contains list of required/optional parameters for use during deployment.
@@ -10,8 +10,8 @@ has the following features:
 * Easily modified or extended.
 
 ## Documentation
-* [Design](docs/design.md) - overall design of AnsibleApp
-* [Developers](docs/developers.md) - how to create your own AnsibleApp
+* [Design](docs/design.md) - overall design of Ansible Playbook Bundles
+* [Developers](docs/developers.md) - how to create your own Ansible Playbook Bundle
 * [ISV](docs/isv.md) - integrating with existing Ansible roles
 
 ## Links
