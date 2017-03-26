@@ -2,12 +2,12 @@ import os
 import sys
 import argparse
 
-import ansibleapp.engine
+import apb.engine
 
 AVAILABLE_COMMANDS = {
     'help': 'Display this help message',
-    'prepare': 'Prepare an ansible-container project for ansibleapp packaging',
-    'build': 'Build and package ansibleapp container'
+    'prepare': 'Prepare an ansible-container project for ansible playbook bundle packaging',
+    'build': 'Build and package ansible playbook bundle container'
 }
 
 
@@ -30,8 +30,8 @@ def subcmd_help_parser(parser, subcmd):
 
 def main():
     parser = argparse.ArgumentParser(
-        description=u'ansibleapp tooling for'
-        u'assisting in building and packaging ansibleapps.'
+        description=u'apb tooling for'
+        u'assisting in building and packaging apbs.'
     )
 
     parser.add_argument(
@@ -62,7 +62,7 @@ def main():
         sys.exit(0)
 
     try:
-        getattr(ansibleapp.engine,
+        getattr(apb.engine,
                 u'cmdrun_{}'.format(args.subcommand))(**vars(args))
     except Exception as e:
         print("Exception occurred! %s" % e)

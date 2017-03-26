@@ -5,12 +5,12 @@ import yaml
 
 from shutil import copyfile
 
-SPEC_FILE = 'ansibleapp.yml'
+SPEC_FILE = 'apb.yml'
 
 DAT_DIR = 'dat'
 DAT_PATH = os.path.join(os.path.dirname(__file__), DAT_DIR)
 
-ACTIONS_DIR = os.path.join('ansibleapp', 'actions')
+ACTIONS_DIR = os.path.join('apb', 'actions')
 
 EX_DOCKERFILE = 'ex.Dockerfile'
 EX_AC_DOCKERFILE = 'ex.ac.Dockerfile'
