@@ -33,18 +33,18 @@ TODO
 
 ### Example Dockerfile
 ```
-FROM ansibleapp/ansibleapp-base
+FROM apb/apb-base
 
 MAINTAINER Dylan Murray <dymurray@redhat.com>
 
-ADD ansibleapp/actions /ansibleapp/actions
+ADD apb/actions /apb/actions
 ```
 
 This Dockerfile is based off apb/apb-base which has an entrypoint script which will call the respective playbook out of /apb/actions/ as well as handling authentication.
 
 Running an Ansible Playbook Bundle (APB)
 ```
-docker run -e "OPENSHIFT_TARGET=<oc_cluster_address>" -e "OPENSHIFT_USER=<oc_user>" -e "OPENSHIFT_PASS=<oc_pass>" <ansibleapp_name> $action
+docker run -e "OPENSHIFT_TARGET=<oc_cluster_address>" -e "OPENSHIFT_USER=<oc_user>" -e "OPENSHIFT_PASS=<oc_pass>" <apb_name> $action
 ex: docker run -e "OPENSHIFT_TARGET=cap.example.com:8443" -e "OPENSHIFT_USER=admin" -e "OPENSHIFT_PASS=admin" apb/etherpad-apb provision
 ```
 
@@ -72,7 +72,7 @@ Once you have a working ansible-container project, creating an apb is trivial.
 1. Create a Dockerfile with the content:
 
     ```
-    FROM apb/ansibleapp-base
+    FROM apb/apb-base
 
     ADD ansible /usr/local/ansible
     ADD apb/actions /apb/actions

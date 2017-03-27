@@ -41,8 +41,8 @@ Requires: PyYAML
 
 
 %description
-AnsibleApp is a lightweight application definition (meta-containers). AnsibleApp
-has the following features:
+Ansible Playbook Bundle (APB) is a lightweight application definition (meta-containers).
+APB has the following features:
 
 %prep
 %setup -q -n %{name}-%{version}
