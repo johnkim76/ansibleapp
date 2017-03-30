@@ -12,7 +12,7 @@ AnsibleApplication/
             unbind.yaml
 ```
 
-These playbooks are called when their respective action is passed into the ansibleapp meta container. 
+These playbooks are called when their respective action is passed into the ansibleapp meta container.
 
 ##### provision.yaml
 
@@ -50,7 +50,7 @@ ex: docker run -e "OPENSHIFT_TARGET=cap.example.com:8443" -e "OPENSHIFT_USER=adm
 
 # Using ansible-container to create an ansibleapp
 
-[ansible-container](github.com/ansible/ansible-container) is a project that allows you to define a containerized application in yaml, and configure the individual containers using ansible. This section will assume that you have created an ansible-container project as described in the [ansible-container documentation](http://docs.ansible.com/ansible-container/). 
+[ansible-container](github.com/ansible/ansible-container) is a project that allows you to define a containerized application in yaml, and configure the individual containers using ansible. This section will assume that you have created an ansible-container project as described in the [ansible-container documentation](http://docs.ansible.com/ansible-container/).
 
 Once you have a working ansible-container project, creating an ansibleapp is trivial.
 
@@ -74,29 +74,30 @@ Once you have a working ansible-container project, creating an ansibleapp is tri
     ```
     FROM ansibleapp/ansibleapp-base
 
-    ADD ansible /usr/local/ansible
-    ADD ansibleapp/actions /ansibleapp/actions
+    ADD ansible /opt/ansible
+    ADD ansibleapp /opt/ansibleapp
     ```
-    
+
 1. Your directory structure now should look something like this:
 
     ```
-AnsibleApplication/
-    Dockerfile
-    ansible/
-        meta.yml
-        container.yml
-        main.yml
-        roles/
-            AnsibleApplication-<engine>/
-                defaults/main.yml
-                tasks/main.yml
-                meta/main.yml
-    ansibleapp/
-        actions/
-            provision.yaml
-            deprovision.yaml
+    AnsibleApplication/
+        Dockerfile
+        ansible/
+            meta.yml
+            container.yml
+            main.yml
+            roles/
+                AnsibleApplication-<engine>/
+                    defaults/main.yml
+                    tasks/main.yml
+                    meta/main.yml
+        ansibleapp/
+            actions/
+                provision.yaml
+                deprovision.yaml
     ```
+
 1. Now just run `docker build . -t <container-name>`
 
 You should now have a working ansibleapp. To provision/deprovision your application, simply run
